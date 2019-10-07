@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane fx:id="homeWindow" maxHeight="440.0" maxWidth="640.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="30.0" tabMaxWidth="100.0" tabMinHeight="20.0" tabMinWidth="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafxwithmaven.studentidentification.LoginController">
+  <tabs>
+    <Tab fx:id="detailTab" text="Project detail">
+         <content>
+            <BorderPane fx:id="detailTabPane" maxHeight="373.0" maxWidth="640.0" minHeight="370.0" minWidth="600.0" prefHeight="370.0" prefWidth="600.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <top>
+                  <Label fx:id="projectTitleLabel" text="STUDENT IDENTIFICATION SOFTWARE" BorderPane.alignment="CENTER">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </Label>
+               </top>
+               <center>
+                  <ImageView id="schoolLogoView" fx:id="schoolLogoView" fitHeight="282.0" fitWidth="379.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../images/school%20logo%20png.png" />
+                     </image>
+                  </ImageView>
+               </center>
+               <bottom>
+                  <FlowPane fx:id="aboutProjectPane" alignment="CENTER" prefHeight="108.0" prefWidth="580.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox id="developerPane" fx:id="developerPane" prefHeight="108.0" prefWidth="242.0" stylesheets="@../styles/Styles.css">
+                           <children>
+                              <Label prefWidth="242.0" text="Ogundowole Oluwatomiwa T" />
+                              <Label prefWidth="242.0" text="Computer Engineering " />
+                              <Label prefWidth="242.0" text="Engineering " />
+                              <Label prefWidth="242.0" text="EES/14/15/0233" />
+                           </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="108.0" prefWidth="95.0" stylesheets="@../styles/Styles.css" />
+                        <VBox id="codeveloperPane" fx:id="codeveloperPane" prefHeight="108.0" prefWidth="242.0" stylesheets="@../styles/Styles.css">
+                           <children>
+                              <Label prefWidth="242.0" text="Olufowokan Polola A." />
+                              <Label prefWidth="242.0" text="Computer Engineering " />
+                              <Label prefWidth="242.0" text="Engineering " />
+                              <Label prefWidth="242.0" text="EES/14/15/0289" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </FlowPane>
+               </bottom>
+            </BorderPane>
+         </content>
+    </Tab>
+    <Tab fx:id="loginTab" text="Login">
+         <content>
+            <AnchorPane fx:id="loginTabPane" maxHeight="373.0" maxWidth="640.0" minHeight="370.0" minWidth="600.0" prefHeight="370.0" prefWidth="600.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <GridPane fx:id="loginGridPane" hgap="3.0" layoutX="11.0" layoutY="16.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="185.0" prefWidth="577.0" vgap="3.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.0" minWidth="-Infinity" prefWidth="79.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="491.0" minWidth="10.0" prefWidth="491.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="userNameLabel" text="User name" />
+                        <Label fx:id="passwordLabel" text="Password" GridPane.rowIndex="1" />
+                        <TextField fx:id="userNameField" GridPane.columnIndex="1" />
+                        <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <FlowPane fx:id="flowPaneInGridPane" hgap="3.0" prefHeight="200.0" prefWidth="200.0" vgap="3.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Button fx:id="loginButton" mnemonicParsing="false" onAction="#onLoginButtonAction" text="Login" />
+                              <Separator maxHeight="76.0" maxWidth="21.0" minHeight="40.0" minWidth="20.0" orientation="VERTICAL" prefHeight="76.0" prefWidth="21.0" />
+                              <Label fx:id="loginStatusLabel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="401.0" text="Login to activate the buttons below" />
+                           </children>
+                           <GridPane.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </padding>
+                        </FlowPane>
+                     </children>
+                  </GridPane>
+                  <FlowPane fx:id="flowPaneLoginTab" layoutY="201.0" prefHeight="171.0" prefWidth="600.0">
+                     <children>
+                        <Separator prefHeight="135.0" prefWidth="580.0" />
+                        <Button fx:id="uploadButton" mnemonicParsing="false" onAction="#onClickUploadButton" text="Upload" />
+                        <Label fx:id="whiteSpaceLabel" prefHeight="17.0" prefWidth="34.0" />
+                        <Button fx:id="verifyButton" mnemonicParsing="false" onAction="#onClickVerifyButton" text="Verify | Delete" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </FlowPane>
+               </children>
+            </AnchorPane>
+         </content>
+    </Tab>
+  </tabs>
+</TabPane>

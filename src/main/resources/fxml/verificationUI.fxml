@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" maxHeight="440.0" maxWidth="640.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafxwithmaven.studentidentification.VerificationUIController">
+    <stylesheets>
+        <URL value="@/styles/verificationui.css" />
+    </stylesheets>
+   <children>
+      <VBox id="stemPane" fx:id="stemPane" maxHeight="440.0" maxWidth="640.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" spacing="5.0" styleClass="pane" stylesheets="@../styles/verificationui.css">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <FlowPane id="imageViewFlowPane" fx:id="imageViewFlowPane" prefHeight="150.0" prefWidth="200.0" rowValignment="TOP" styleClass="pane" stylesheets="@../styles/verificationui.css">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <ImageView id="studentPhoto" fx:id="studentPhoto" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="node">
+                     <image>
+                        <Image url="@../images/avatar.jpg" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </children>
+            </FlowPane>
+            <GridPane id="studentDataGrid" fx:id="studentDataGrid" hgap="4.0" styleClass="pane" stylesheets="@../styles/verificationui.css" vgap="4.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="87.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="506.0" minWidth="10.0" prefWidth="485.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <effect>
+                  <Bloom />
+               </effect>
+               <children>
+                  <Label id="nameLabel" fx:id="nameLabel" stylesheets="@../styles/verificationui.css" text="Name" />
+                  <Label id="levelLabel" fx:id="levelLabel" stylesheets="@../styles/verificationui.css" text="Level" GridPane.rowIndex="1" />
+                  <Label id="deptLabel" fx:id="deptLabel" stylesheets="@../styles/verificationui.css" text="Department" GridPane.rowIndex="2" />
+                  <Label id="idLabel" fx:id="idLabel" stylesheets="@../styles/verificationui.css" text="Matric Number" GridPane.rowIndex="4" />
+                  <TextField id="nameField" fx:id="nameField" styleClass="field" stylesheets="@../styles/verificationui.css" GridPane.columnIndex="1" />
+                  <TextField id="nameField" fx:id="levelField" styleClass="field" stylesheets="@../styles/verificationui.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField id="deptField" fx:id="deptField" styleClass="field" stylesheets="@../styles/verificationui.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField id="idField" fx:id="matricField" styleClass="field" stylesheets="@../styles/verificationui.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label id="facualtyLabel" fx:id="facualtyLabel" stylesheets="@../styles/verificationui.css" text="Facaulty" GridPane.rowIndex="3" />
+                  <TextField id="facualtyField" fx:id="facualtyField" styleClass="field" stylesheets="@../styles/verificationui.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <FlowPane prefHeight="87.0" prefWidth="580.0" rowValignment="BOTTOM">
+               <children>
+                  <Separator id="pageMainSeparator" prefHeight="41.0" prefWidth="578.0" stylesheets="@../styles/verificationui.css" />
+                  <Button id="queryButton" fx:id="queryButton" mnemonicParsing="false" onAction="#queryButtonAction" prefHeight="25.0" prefWidth="100.0" stylesheets="@../styles/verificationui.css" text="Query" />
+                  <Separator orientation="VERTICAL" prefHeight="29.0" prefWidth="25.0" />
+                  <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonEvent" text="Delete" />
+                  <Separator orientation="VERTICAL" prefHeight="29.0" prefWidth="157.0" />
+                  <ComboBox fx:id="portDiscription" onAction="#portComboActionEvent" onMouseEntered="#PortComboHooverEvent" prefHeight="25.0" prefWidth="241.0" promptText="Select hardware port" />
+               </children>
+            </FlowPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
